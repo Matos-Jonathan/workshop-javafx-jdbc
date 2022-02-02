@@ -23,6 +23,8 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
     
+    private static Scene mainScene;
+    
     //@Override codigo que vem oriundo da iniciação do projeto
     /*public void start(Stage primaryStage) {
         Button btn = new Button();
@@ -50,7 +52,7 @@ public class Main extends Application {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             ScrollPane scrollPane = loader.load();
-            Scene mainScene = new Scene(scrollPane);
+            mainScene = new Scene(scrollPane);
             
             scrollPane.setFitToHeight(true);
             scrollPane.setFitToWidth(true);
@@ -63,6 +65,10 @@ public class Main extends Application {
             e.printStackTrace();
         }
         
+    }
+    
+    public static Scene getMainScene(){
+        return mainScene;
     }
 
     /**
