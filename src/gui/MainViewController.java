@@ -75,7 +75,7 @@ public class MainViewController implements Initializable {
             mainVBox.getChildren().add(mainMenu);
             mainVBox.getChildren().addAll(newVBox.getChildren());
             
-            //carrega a tela passada como parametro
+            //carrega a tela passada como parametro 
             T controller = loader.getController();
             initializingAction.accept(controller);
 
