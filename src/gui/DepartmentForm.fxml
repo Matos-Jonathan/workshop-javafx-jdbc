@@ -31,7 +31,7 @@
             <Label fx:id="labelErrorName" prefHeight="17.0" prefWidth="144.0" textFill="#eb0c0c" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="btSave" mnemonicParsing="false" onAction="#onBtActionSave" prefWidth="60.0" text="Save">
+                  <Button fx:id="btSave" mnemonicParsing="false" onAction="#onBtSaveAction" prefWidth="60.0" text="Save">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>
