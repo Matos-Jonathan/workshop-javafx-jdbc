@@ -1,5 +1,6 @@
 package gui;
 
+import gui.listeners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Utils;
 import java.io.IOException;
@@ -30,7 +31,7 @@ import workshop.javafx.jdbc.Main;
  *
  * @author jonathan
  */
-public class DepartmentListController implements Initializable {
+public class DepartmentListController implements Initializable, DataChangeListener {
 
     private DepartmentService service;
 
@@ -94,7 +95,8 @@ public class DepartmentListController implements Initializable {
             
             DepartmentFormController controller = loader.getController();
             controller.setDepartment(obj);
-            controller.setDepartmentService(new DepartmentService()   );
+            controller.setDepartmentService(new DepartmentService());
+            controller.subscribeDataChangeListener(this);
             controller.updateFormData();
                     
             Stage dialogStage = new Stage();
@@ -109,5 +111,10 @@ public class DepartmentListController implements Initializable {
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
         }
 
+    }
+
+    @Override
+    public void onDataChenged() {
+        updateTableView();
     }
 }
